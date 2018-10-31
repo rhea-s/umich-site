@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CMAA Portal</title>
+
+    <!--Bootstrap, jQuery CDN-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Month', 'Math', 'English', 'History'],
+                ['Sept',  87,      82, 75],
+                ['Oct',  84,      78, 73],
+                ['Nov',  89,       85, 77],
+                ['Dec',  91,      83,82],
+                ['Jan',  94,      83, 75],
+                ['Feb',  92,      89, 81],
+            ]);
+
+            var options = {
+                curveType: 'function',
+                legend: { position: 'right' },
+                width: 800,
+            };
+            var chart = new google.visualization.LineChart(document.getElementById('chartOne'));
+            chart.draw(data, options);
+            var data2 = google.visualization.arrayToDataTable([
+                ['Month', 'Math', 'English', 'History'],
+                ['Sept',  92,      87, 82],
+                ['Oct',  94,      78, 73],
+                ['Nov',  91,       85, 77],
+                ['Dec',  82,      94,94],
+                ['Jan',  76,      92, 75],
+                ['Feb',  82,      89, 81],
+            ]);
+            var chart2 = new google.visualization.LineChart(document.getElementById('chartTwo'));
+            chart2.draw(data2, options);
+            var chart3 = new google.visualization.LineChart(document.getElementById('chartThree'));
+            chart3.draw(data,options);
+            var chart4 = new google.visualization.LineChart(document.getElementById('chartFour'));
+            chart4.draw(data2,options);
+            var chart5 = new google.visualization.LineChart(document.getElementById('chartFive'));
+            chart5.draw(data,options);
+            var chart6 = new google.visualization.LineChart(document.getElementById('chartSix'));
+            chart6.draw(data2,options);
+            var chart7 = new google.visualization.LineChart(document.getElementById('chartSeven'));
+            chart7.draw(data,options);
+        }</script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        #myInput {
+            background-position: 10px 12px;
+            background-repeat: no-repeat;
+            width: 100%;
+            font-size: 16px;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+        }
+
+        #myUL {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #myUL li a {
+            border: 1px solid #ddd;
+            margin-top: -1px; /* Prevent double borders */
+            background-color: #f6f6f6;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+            display: block
+        }
+
+        #myUL li a:hover:not(.header) {
+            background-color: #eee;
+        }
+    </style>
+
+</head>
+
+<body id="page-top">
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger sticky-top" id="mainNav">
+    <div class="container justify-content-start">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+            <img src="img/cmaa.gif" width="50" height="50" class="d-inline-block align-top" alt="">
+            <a class="text-white" style="font-size:24px">Chinese Mutual Aid Association</a>
+        </a>
+
+    </div><ul class="navbar-nav">
+      <li class="nav-item" id="logout" style="padding-right:200px;font-size:18px">
+        <a class="nav-link" href="../index.html#work">Logout</a></li>
+    </ul>
+</nav>
+
+
+<div class="container">
+    <h1>Admin Panel</h1>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..." title="Type in a name">
+
+
+<div class="accordion" id="accordions">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="color:black">
+          Adele
+        </button>
+      </h5>
+    </div>
+    <div id="collapseOne" class="collapse collapsed" aria-labelledby="headingOne" data-parent="#accordions">
+      <div class="card-body" id="adele">
+        <div id="chartOne"></div>
+        <form id="form" name="name">Feedback: <input name="name" type="text" style="width:500px">&nbsp;<button class="btn btn-primary btn-sm">Submit</button></form>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="color:black">
+          Agnes
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordions">
+      <div class="card-body" id="agnes">
+        <div id="chartTwo"></div>
+        Feedback: <input name="name" type="text" style="width:500px">&nbsp;<button class="btn btn-primary btn-sm">Submit</button></form>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="color:black">
+          Billy
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordions">
+      <div class="card-body" id="billy">
+        <div id="chartThree"></div>
+        Feedback: <input name="name" type="text" style="width:500px">&nbsp;<button class="btn btn-primary btn-sm">Submit</button></form>
+      </div>
+    </div>
+  </div>
+
+<div class="card">
+    <div class="card-header" id="headingFour">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" style="color:black">
+          Bob
+        </button>
+      </h5>
+    </div>
+    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordions">
+      <div class="card-body" id="bob">
+        <div id="chartFour"></div>
+        Feedback: <input name="name" type="text" style="width:500px">&nbsp;<button class="btn btn-primary btn-sm">Submit</button></form>
+      </div>
+    </div>
+  </div>
+
+<div class="card">
+    <div class="card-header" id="headingFive">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" style="color:black">
+          Calvin
+        </button>
+      </h5>
+    </div>
+    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordions">
+      <div class="card-body" id="calvin">
+        <div id="chartFive"></div>
+        Feedback: <input name="name" type="text" style="width:500px">&nbsp;<button class="btn btn-primary btn-sm">Submit</button></form>
+      </div>
+    </div>
+  </div>
+
+<div class="card">
+    <div class="card-header" id="headingSix">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix" style="color:black">
+          Christina
+        </button>
+      </h5>
+    </div>
+    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordions">
+      <div class="card-body" id="christina">
+        <div id="chartSix"></div>
+        Feedback: <input name="name" type="text" style="width:500px">&nbsp;<button class="btn btn-primary btn-sm">Submit</button></form>
+      </div>
+    </div>
+  </div>
+
+<div class="card">
+    <div class="card-header" id="headingSeven">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven" style="color:black">
+          Cindy
+        </button>
+      </h5>
+    </div>
+    <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordions">
+      <div class="card-body" id="cindy">
+        <div id="chartSeven"></div>
+        Feedback: <input name="name" type="text" style="width:500px">&nbsp;<button class="btn btn-primary btn-sm">Submit</button></form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class = "btn-block">
+    <button type="button" onclick="window.location.href='add-worksheet.html';" class="btn btn-danger">Add Worksheet</button>
+    <button id="notifs" class="btn btn-dark">Pending&nbsp;<span id="badgespan" class="badge badge-danger">1</span></button><br><br>
+<span id="pending" style="display:none"><a href="img/IntakeForm.pdf" download>Chelsea's Intake Form</a></span>
+</div>
+</div>
+    <script>
+        function myFunction() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("accordions");
+            li = ul.getElementsByClassName("card");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("button")[0];
+                if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+        $("#form").submit(function(event) {
+            $("#form").reset();
+            event.preventDefault();
+        });
+        $("#notifs").on('click',function(event) {
+          $("#badgespan").text("");
+          $("#pending").css("display","inline");
+        });
+    </script>
+
+</div>
+
+
+
+
+<!-- Footer
+<footer class="py-5 bg-danger">
+  <div class="container">
+    <p class="m-0 text-center text-white">Code for Good Chicago 2018</p>
+  </div>
+</footer>-->
+
+</body>
+
+</html>
