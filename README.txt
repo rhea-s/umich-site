@@ -1,4 +1,4 @@
-Website found <a href=“www.umich.edu/~rheas”>here</a>.
+Website found at www.umich.edu/~rheas
 
 Credit to
 Astral by HTML5 UP
